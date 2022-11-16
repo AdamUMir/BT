@@ -1,0 +1,26 @@
+# ASSIGNMENT 1
+def iterativefib(n):
+  f1 = 0
+  f2 = 1
+  for i in range(n):
+    if(i<2):
+      print(i, end=' ')
+    else:
+      sum = f2 + f1
+      f1=f2
+      f2=sum
+      print(sum,end=' ')
+def recursivefib(n):
+  if(n==0 or n==1):
+    return n
+  else:
+    return (recursivefib(n-1)+recursivefib(n-2))
+def main():
+  n=10
+  print("Iterative Fibonacci Sequence:")
+  iterativefib(n)
+  print("\nRecursive Fibonacci Sequence:")
+  for i in range(n):
+    print(recursivefib(i),end=' ')
+if __name__ == '__main__':
+  main()

@@ -1,0 +1,24 @@
+p = 1.0
+f = 1.0
+def e(x, n):
+    global p, f
+    if (n == 0):
+        return 1
+    r = e(x, n - 1)
+    p = p * x
+    f = f * n
+    return (r + p / f)
+def exponential(n, x):
+    sum = 1.0
+    for i in range(n, 0, -1):
+        sum = 1 + x * sum / i
+    print ("e^x =", sum)
+def main():
+  n=15
+  x=4
+  print("Iterative Exponential Series:")
+  exponential(n, x)
+  print("\nRecursive Exponential Sequence:")
+  print("e^x =",e(x, n))
+if __name__ == '__main__':
+  main()
